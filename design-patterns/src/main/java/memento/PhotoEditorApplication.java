@@ -10,11 +10,24 @@ public class PhotoEditorApplication {
         history.save(photoEditor);
         System.out.println(photoEditor);
 
+        photoEditor.addFeature(new Feature("brightness"));
+        history.save(photoEditor);
+        System.out.println(photoEditor);
+
         photoEditor.addFeature(new Feature("Text"));
-        //history.save(photoEditor); // if last feature is saved, getting the same
+        //history.save(photoEditor); // if last feature is saved,getting the same object, so avoid saving the last feature
         System.out.println(photoEditor);
 
         history.undo(photoEditor);
         System.out.println(photoEditor);
+
+        photoEditor.addFeature(new Feature("contrast"));
+        //history.save(photoEditor);
+        System.out.println(photoEditor);
+
+        history.undo(photoEditor);
+        System.out.println(photoEditor);
+
+        history.undo(photoEditor);
     }
 }
